@@ -1,0 +1,63 @@
+{# templates/macros.html #}
+{# This file contains Jinja macros for rendering key columns in a Bootstrap grid layout. #}
+
+{% macro account_keys_col(image, alt_text, hover_text) %}
+    <div class="col-lg-4 col-md-3 col-sm-4 mt-5 mb-3">
+        <div class="key-container d-flex flex-column align-items-center">
+            <img src="{{ url_for('static', filename='images/' ~ image) }}" class="img-fluid key-img" alt="{{ alt_text }}">
+            <div class="key-hover-text">{{ hover_text | safe }}</div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro challenge_keys_col(image, alt_text, hover_text) %}
+    <div class="col-lg-2 col-md-2 col-sm-5 mt-3 mb-2">
+        <div class="key-container d-flex flex-column align-items-center">
+            <img src="{{ url_for('static', filename='images/' ~ image) }}" class="img-fluid key-img" alt="{{ alt_text }}">
+            <div class="key-hover-text">{{ hover_text | safe }}</div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro index_keys_col(image, alt_text, hover_text) %}
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-2">
+        <div class="key-container d-flex flex-column align-items-center">
+            <img src="{{ url_for('static', filename='images/' ~ image) }}" class="img-fluid key-img" alt="{{ alt_text }}">
+            <div class="key-hover-text">{{ hover_text | safe }}</div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro login_keys_col(image, alt_text, hover_text) %}
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-1">
+        <div class="key-container d-flex flex-column align-items-center">
+            <img src="{{ url_for('static', filename='images/' ~ image) }}" class="img-fluid key-img" alt="{{ alt_text }}">
+            <div class="key-hover-text">{{ hover_text | safe }}</div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro login_centre_key_col(image, alt_text, hover_text) %}
+    <div class="col-lg-5 col-md-4 col-sm-6 mb-1">
+        <div class="key-container d-flex flex-column align-items-center">
+            <img src="{{ url_for('static', filename='images/' ~ image) }}" class="img-fluid key-img" alt="{{ alt_text }}">
+            <div class="key-hover-text">{{ hover_text | safe }}</div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro login_plain_keys_col(image, alt_text) %}
+    <div class="col-lg-4 col-md-3 col-sm-4 mt-4 mb-3">
+        <div class="key-container d-flex flex-column align-items-center">
+            <img src="{{ url_for('static', filename='images/' ~ image) }}" class="img-fluid key-img-plain" alt="{{ alt_text }}">
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro register_plain_keys_col(image, alt_text) %}
+    <div class="col-lg-4 col-md-3 col-sm-4 mt-1 mb-3">
+        <div class="key-container d-flex flex-column align-items-center">
+            <img src="{{ url_for('static', filename='images/' ~ image) }}" class="img-fluid key-img-plain" alt="{{ alt_text }}">
+        </div>
+    </div>
+{% endmacro %}

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Through Glass Darkly
+{% endblock %}
+
+{% block content %}
+
+    {% import "macros.html" as macros %}
+    <div class="custom-heading">
+        <h1>The House is ever hungry, {{ user["username"] }}</h1>
+    </div>
+    <div class="container text-center mt-4">
+        <div class="row justify-content-center">
+            {{ macros.index_keys_col('key2-vert.png', 'Key 2', 'Cold, ill-fated iron.') }}
+            {{ macros.index_keys_col('key1.png', 'Key 1', 'No door remembers it.<br>Nor so shall thee.') }}
+            {{ macros.index_keys_col('key3-vert.png', 'Key 3', 'Spur of unthought intent.') }}
+        </div>
+    </div>
+    <h3 class="text-center">Are you ready to continue?</h3>
+    <div class="text-center">
+        <a href="/challenge" class="btn btn-dark mt-3 align-center">Delve</a>
+    </div>
+
+{% endblock %}
+

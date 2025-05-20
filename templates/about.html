@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block content %}
+
+    <section class="container mb-3">
+        <div class="custom-heading">
+            <h1 class="mb-5">Welcome to <strong>Through Glass Darkly</strong></h1>
+        </div>
+
+        <h4 class="mb-3"><strong>What is the House?</strong></h4>
+
+        <p class="mb-3">
+            <em>Through Glass Darkly</em> is an interactive fiction game based on Harry Tuffs' 2D exploration RPG
+            <a class="about-links" href="https://www.harrytuffs.com/a-house-of-many-doors" target="_blank" rel="noopener noreferrer">
+                A House of Many Doors
+            </a>,
+            drawing design and aesthetic inspiration from the Failbetter browser game 
+            <a class="about-links" href="https://www.failbettergames.com/games/fallen-london" target="_blank" rel="noopener noreferrer">
+                Fallen London
+            </a>.
+        </p>
+
+        <p class="mb-3">
+            I, the creator (hello, it's me, Matt), am a huge fan of both games, and I wanted to create an homage of sorts to Harry Tuffs' Herculean labour of love.
+        </p>
+
+        <p class="mb-3">
+            You, the player character, are a 'visitant', a being stolen from another world by the parasite dimension that is the 'House'.
+        </p>
+
+        <div class="lore-block mx-auto my-4 px-4 py-4">
+            <p>
+                It is a mad, disturbing sprawl of wonders and terrors, but you don't have time to worry about all that right now.
+                Plucked from the fantastic dark, only to be pitched through a mirror and set adrift in a kaleidoscopic sea,
+                you are propelled through the House. Blood, quickened by the heart.
+            </p>
+        
+            <p>
+                Find the next mirror. Delve ever deeper. Do not look back.
+            </p>
+        </div>        
+
+        <h4 class="mb-3"><strong>Content Warning</strong></h4>
+
+        <p class="mb-3">
+            <em>Please be aware that this game features themes of death, violence, and body horror, and textual descriptions thereof.</em>
+        </p>
+
+        <h4 class="mb-3"><strong>Copyright, Credits and Technical Information</strong></h4>
+
+        <p class="mb-3">
+            This game was written and designed by Matt Taylor.
+        </p>
+
+        <p class="mb-3">
+            It is a work of fan fiction based on Harry Tuffs' <em>A House of Many Doors</em> and is not intended for commercial use.
+            All rights to the original game and its characters, settings, and lore are owned by Harry Tuffs.
+        </p>
+
+        <p class="mb-3">
+            This game was created as my final project for Harvard's CS50 course.
+        </p>
+
+        <p class="mb-3">
+            The backend is built with Flask, a lightweight Python web framework, and uses a SQLite database to manage user data and story progress.<br>
+            The frontend uses HTML, CSS, and JavaScript, with Bootstrap providing layout and styling.
+        </p>
+
+        <p class="mb-3">
+            You can read much more about the project in the README on the
+            <a class="about-links" href="https://github.com/MJ-NT/Glass-Darkly" target="_blank" rel="noopener noreferrer">
+                GitHub page
+            </a>.
+        </p>
+    </section>
+
+{% endblock %}

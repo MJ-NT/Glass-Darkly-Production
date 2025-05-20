@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Myself
+{% endblock %}
+
+{% block content %}
+<div class="container mt-2">
+    <div class="custom-heading">
+        <h1>You are remembered, {{ user["username"] }}</h1>
+    </div>
+
+    <div id="story-text" class="alert alert-light border border-dark fade-in mt-3 d-none text-center"></div>
+
+    <h4 class="text-center mb-4">
+        Experience is the greatest teacher, or so they say. How has it educated you?
+    </h4>
+
+    <div class="row">
+        <!-- Know Thyself -->
+        <div class="col-lg-4 col-md-4 col-sm-6 mb-3 mx-0">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title mb-2 text-center text-uppercase border-bottom pb-2">
+                        Know Thyself
+                    </h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item mb-2">Who are you, here in the dark?</li>
+                        <li class="list-group-item">Watchful: <span id="stat-watchful">{{ user_stats.watchful }}</span></li>
+                        <li class="list-group-item">Shadowy: <span id="stat-shadowy">{{ user_stats.shadowy }}</span></li>
+                        <li class="list-group-item">Dangerous: <span id="stat-dangerous">{{ user_stats.dangerous }}</span></li>
+                        <li class="list-group-item">Persuasive: <span id="stat-persuasive">{{ user_stats.persuasive }}</span></li>
+                        <li class="list-group-item mt-2 text-center"><em>lightless is the light that darkness hides</em></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apply Your Knowledge -->
+        <div class="col-lg-4 col-md-4 col-sm-6 mb-3 mx-0">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title mb-3 text-center text-uppercase border-bottom pb-2">
+                        Apply Your Knowledge
+                    </h4>
+                    <form id="stat-form" method="POST">
+                        <h5 class="mb-3 text-center">You have <span id="apprehensions">{{ user_stats.apprehensions }}</span> Apprehensions.</h5>
+
+                        <label for="stat">Which stat would you like to improve?</label>
+                        <select name="stat" id="stat" class="form-control">
+                            <option value="" disabled selected>Select one</option>
+                            <option value="watchful">Watchful</option>
+                            <option value="shadowy">Shadowy</option>
+                            <option value="dangerous">Dangerous</option>
+                            <option value="persuasive">Persuasive</option>
+                        </select>
+
+                        <label for="amount-select" class="mt-3">How many apprehensions would you like to spend?</label>
+                        <select name="amount" id="amount-select" class="form-control" min="1" max="{{ user_stats.apprehensions }}">
+                            <option value="" disabled selected>Select one</option>
+                            {% for i in range(1, user_stats.apprehensions + 1) %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-dark mt-4">Commit your knowledge</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Yet Beware -->
+        <div class="col-lg-4 col-md-4 col-sm-6 mb-3 mx-0">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title mb-2 text-center text-uppercase border-bottom pb-2">
+                        Yet Beware
+                    </h4>
+                    <ul class="list-group list-group-flush text-center">
+                        <li class="list-group-item">The ever-present danger.<br>Slings and arrows of outrageous fortune. More besides.</li>
+                        <li class="list-group-item">If this reaches 100, <strong>bad things</strong> will happen</li>
+                        <li class="list-group-item">
+                            Menace: {{ user_stats.menace }}
+                        </li>
+                        <li class="list-group-item">
+                            <div class="progress mt-3" title="{{ user_stats.menace }}%">
+                                <div class="progress-bar bg-danger"
+                                     role="progressbar"
+                                     aria-valuenow="{{ user_stats.menace }}"
+                                     aria-valuemin="0"
+                                     aria-valuemax="100"
+                                     style="width: {{ user_stats.menace }}%;">
+                                    <span class="visually-hidden">{{ user_stats.menace }}%</span>
+                                </div>
+                            </div>                                                   
+                        </li>                     
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h4 class="text-center mt-4">
+        You have learned, or perhaps merely discovered the depths of your ignorance.
+    </h4>
+    <div class="text-center">
+        <a href="/challenge" class="btn btn-dark mt-3 mb-3 align-center">Return?</a>
+    </div>
+</div>
+{% endblock %}

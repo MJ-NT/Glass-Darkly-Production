@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log in
+{% endblock %}
+
+{% block content %}
+
+    {% import "macros.html" as macros %}
+    <div class="container text-center my-4">
+        <div class="custom-heading">
+            <h1 class="mt-0"><strong>Through Glass Darkly</strong></h1>
+        </div>
+        <div class="row justify-content-center align-items-center">
+            {{ macros.login_plain_keys_col('key2-vert.png', 'Key 2') }}          
+            <div class="col-lg-4 col-md-6 col-sm-8 prelanding">
+                <h1>Log In</h1>
+                <form action="/login" method="post">
+                    <div class="mb-3">
+                        <label for="username" class="form-label visually-hidden">Username</label>
+                        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label visually-hidden">Password</label>
+                        <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+                    </div>
+                    <button class="btn btn-dark m-2" type="submit">Log In</button>
+                </form>
+            </div>
+            {{ macros.login_plain_keys_col('key2-vert.png', 'Key 2') }}   
+        </div>
+    </div>
+    <div class="container text-center my-4">
+        <div class="row justify-content-center">
+            {{ macros.login_keys_col('key3.png', 'Key 3', 'You are welcome.') }}
+            {{ macros.login_centre_key_col('key1.png', 'Key 1', 'Friend, iron.') }}
+            {{ macros.login_keys_col('key3.png', 'Key 3', 'Do not leave.') }}
+        </div>
+    </div>
+{% endblock %}

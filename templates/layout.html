@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Through Glass Darkly: {% block title %}{% endblock %}</title>
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+
+        <!-- Bootstrap JS (Use defer to wait until HTML and CSS content are fully loaded) -->
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Custom JS -->
+        <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+    </head>
+
+    <body>
+        <!-- Navbar -->
+        <nav class="bg-light border navbar navbar-expand-md navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand border border-secondary px-3 py-2 rounded" href="/">Through Glass Darkly</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <!-- left-aligned nav items ('About' always visible) -->
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item px-2 py-2"><a class="nav-link rounded" href="/about">About</a></li>
+                        {% if session["user_id"] %}
+                            <li class="nav-item px-2 py-2"><a class="nav-link rounded" href="/account">Account</a></li>
+                            <li class="nav-item px-2 py-2"><a class="nav-link rounded" href="/myself">Myself</a></li>
+                        {% endif %}
+                    </ul>
+                    <!-- right-aligned nav items -->
+                    <ul class="navbar-nav ms-auto">
+                        {% if session["user_id"] %}
+                            <li class="nav-item px-2 py-2"><a class="nav-link rounded" href="/logout">Log Out</a></li>
+                        {% else %}
+                            <li class="nav-item px-2 py-2"><a class="nav-link rounded" href="/register">Register</a></li>
+                            <li class="nav-item px-2 py-2"><a class="nav-link rounded" href="/login">Log In</a></li>
+                        {% endif %}
+                    </ul>
+                </div>                
+            </div>
+        </nav>
+
+        <!-- Flash Messages in header -->
+        {% if get_flashed_messages() %}
+            <header class="container-sm">
+                {% for message in get_flashed_messages(with_categories=true) %}
+                    <div class="alert alert-{{ message[0] }} mb-0 text-center" role="alert">
+                        {{ message[1] }}
+                    </div>
+                {% endfor %}
+            </header>
+        {% endif %}
+
+        <!-- Page Content -->
+        <main class="container-sm mt-3 mb-3 px-3 py-3 flex-grow-1 page-wrapper">
+            {% block content %}{% endblock %}
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer mt-auto py-2 bg-dark text-white text-center">
+            <span class="footer-text" role="contentinfo">Created by Matt Taylor</span>
+        </footer>
+
+    </body>
+
+</html>

@@ -1,0 +1,215 @@
+body {
+    font-family: Garamond, serif;
+    font-size: 1.2rem;
+    background-color: #353535;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 2.25rem;
+    margin: 0.5rem 0 1.5rem 0;
+    padding: 1.25rem 2rem;
+    border: 5px double #353535;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    display: inline-block;
+}
+
+
+.about-links {
+    color: #4f1838;
+    text-decoration: underline dotted;
+}
+
+.about-links:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+.about-links:visited {
+    color: #650000;
+    text-decoration: none;
+}
+
+.btn-dark {
+    background-color: #353535;
+    color: #f0f0f0;
+    font-size: 1.1rem;
+    border: 5px double #f0f0f0;
+}
+
+.btn-dark:hover {
+    background-color: #f0f0f0;
+    color: #000000;
+    border: 5px double #353535;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.card { 
+    border: 5px double #353535; 
+    padding: 10px; 
+    margin: 10px;
+}
+
+.custom-heading {
+    text-align: center;
+}
+
+.custom-radio .form-check-input:checked {
+    background-color: #292929;
+    border-color: #353535;
+}
+
+.custom-radio .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem #353535;
+}
+
+.custom-radio:hover {
+    background-color: #f0f0f0;
+    border-color: #353535;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.footer-text {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.key-container {
+    position: relative;
+}
+
+.key-hover-text {
+    opacity: 0;
+    margin-top: 0.75rem;
+    background: #353535;
+    color: #f0f0f0;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    text-align: center;
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: none;
+}
+
+.key-img:hover + .key-hover-text {
+    opacity: 1;
+}
+
+.key-img {
+    max-height: 300px;
+    object-fit: contain;
+    border: 5px double #adadad;
+    border-radius: 0.25rem;
+    padding: 10px;
+    background-color: #e7e7e7;
+}
+
+.key-img:hover {
+    transform: scale(1.05);
+    background-color: #4f1838;
+    border: 5px double #353535;
+    cursor: grab;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.key-img:active {
+    cursor: grabbing;
+}
+
+.key-img-plain {
+    max-height: 300px;
+    object-fit: contain;
+    border: 5px double #353535;
+    border-radius: 0.25rem;
+    padding: 10px;
+    background-color: #353535;
+}
+
+.lore-block {
+    max-width: 700px;
+    background-color: #e7e7e7;
+    border-left: 4px solid #68747f;
+    font-style: italic;
+    font-family: 'Georgia', serif; /* Intentional style change */
+    color: #353535;
+    box-shadow: 0 0 10px #adadad;
+    border-radius: 0.25rem;
+}
+
+.navbar-brand:hover {
+    background-color: #353535;
+    color: #f0f0f0;
+    border-color: #353535;
+}
+
+.nav-link:hover {
+    background-color: #353535;
+    color: #f0f0f0;
+}
+
+.option-text {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.page-wrapper {
+    background-color: #f5f5f5;
+    border: 5px double #e7e7e7;
+    border-radius: 0.5rem;
+}
+
+/* Smaller block within the page for the form containers */
+.prelanding {
+    min-width: 200px;
+    max-width: 400px; /* More mobile-friendly */
+    min-height: 200px; /* Allows height to adjust to content but not collapse */
+    
+    /* Center within parent container */
+    margin: 10px auto;
+    
+    /* Center text content (flexbox inherited from body)*/
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* Style */
+    padding: 10px;
+    background-color: #e7e7e7;
+    border: 5px solid #353535;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px #353535;
+}
+
+.progress {
+    height: 20px
+}
+
+.alert .story-text {
+    font-size: 1.3rem;
+}
+
+.text-muted {
+    font-size: 1.1rem;
+}

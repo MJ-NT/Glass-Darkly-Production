@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Overcome
+{% endblock %}
+
+{% block content %}
+    <div class="custom-heading">
+        <h1>The Mirror Crack'd from Side to Side.</h1>
+    </div>
+    <h4 class="text-center">Calamity has struck, as it is sadly wont to do.<br>Your menace has risen too high, {{ user["username"] }}. There is but one path ahead of you.</h4>
+    
+    <div class="text-center">
+        <form action="/overcome" method="post">
+            <button class="btn btn-dark mt-4" type="submit">Begin anew</button>
+        </form>
+    </div>
+{% endblock %}
