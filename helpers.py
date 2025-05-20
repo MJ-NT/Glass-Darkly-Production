@@ -1,10 +1,15 @@
 from flask import redirect, session
 from functools import wraps
 import sqlite3
+import os
+
+# Get absolute path to the database file
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB_PATH = os.path.join(BASE_DIR, "game.db")
 
 # Function to get a database connection
 def get_db_connection():
-    conn = sqlite3.connect("game.db")
+    conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row  # Set to Row to allow dictionary-like row access
     return conn
 
