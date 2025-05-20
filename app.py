@@ -8,10 +8,9 @@ from helpers import get_db_connection, login_required
 from werkzeug.security import check_password_hash, generate_password_hash
 
 # Load environment variables from .env file
-load_dotenv()
+load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 debug = os.getenv("DEBUG", "False") == "True"
 port = int(os.environ.get("PORT", 5000))
-host = "0.0.0.0" if os.getenv("RENDER") == "True" else "127.0.0.1"
 
 app = Flask(__name__)
 CORS(app)  # Allow frontend requests (ChatGPT suggestion)
@@ -24,7 +23,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 app.config["SESSION_PERMANENT"] = True
 app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(days=3)
 app.config["SESSION_TYPE"] = "filesystem"
-app.config["SESSION_FILE_DIR"] = "./flask_session" 
+app.config["SESSION_FILE_DIR"] = os.path.join(os.path.dirname(os.path.abspath(__file__)), "flask_session")
 app.config["SESSION_USE_SIGNER"] = True  # Adds HMAC signing to session IDs - prevents tampering
 app.config["SESSION_COOKIE_HTTPONLY"] = True  # Makes cookies inaccessible to JavaScript
 app.config["SESSION_COOKIE_SAMESITE"] = "Lax"  # Prevents CSRF (Cross-Site Request Forgery) attacks
@@ -504,4 +503,4 @@ def logout():
 
 
 if __name__ == "__main__":
-    app.run(host=host, port=port, debug=debug)
+    app.run(debug=debug)
