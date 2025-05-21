@@ -13,9 +13,9 @@
             <div class="col-lg-7 col-md-8 col-sm-8 mb-3">
                 <div class="card shadow-sm">
                     <div class="card-body fade-in">
-                        <h4 class="card-title mb-5">
+                        <p class="card-text mb-4">
                             {{ challenge.text | replace('\n', '<br>') | safe }}
-                        </h4>
+                        </p>
 
                         <form method="POST">
                             {% for option in challenge.options %}

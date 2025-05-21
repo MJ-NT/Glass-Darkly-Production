@@ -231,10 +231,10 @@ Not if you can help it.""",
                 "text": """Shout. Make thunder of it. Put Stentor to shame.""",
                 "stat": "persuasive",
                 "difficulty": 2,
-                "success_text": """You curse and scream. Your rail against every god you know, and blaspheme any others that might be listening for good measure.
+                "success_text": """You curse and scream. You rail against every god you know, and blaspheme any others that might be listening for good measure.
 
 Your howls of protest are answered, eventually, as you hear the soil shifting above you; a spade hitting the lid of the coffin, loosing a shower of gravedirt into your face.""",
-                "failure_text": """You curse and scream. Your rail against every god you know, and blaspheme any others that might be listening for good measure.
+                "failure_text": """You curse and scream. You rail against every god you know, and blaspheme any others that might be listening for good measure.
 
 But it's not enough.
 
