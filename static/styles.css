@@ -62,6 +62,10 @@ h1 {
     font-size: 1.2rem;
 }
 
+.container-sm {
+    width: 95%;
+}
+
 .custom-heading {
     text-align: center;
 }

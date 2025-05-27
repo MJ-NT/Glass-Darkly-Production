@@ -6,7 +6,6 @@
 
 {% block content %}
 {% import "macros.html" as macros %}
-<div class="container-sm mt-2 mb-3">
     {% if challenge %}
         <div class="row justify-content-center">
             {{ macros.challenge_keys_col('key3-vert.png', 'Key 3', 'Raskovnik') }}
@@ -58,5 +57,4 @@
             {{ macros.challenge_keys_col('key1-vert.png', 'Key 1', 'Do not leave.') }}
         </div>
     {% endif %}
-</div>
 {% endblock %}
