@@ -82,6 +82,10 @@ h1 {
     transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
 
+.custom-radio label {
+    cursor: pointer;
+}
+
 .custom-radio .form-check-input:checked {
     background-color: #292929;
     border-color: #353535;
