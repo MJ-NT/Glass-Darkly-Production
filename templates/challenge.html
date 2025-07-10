@@ -9,7 +9,7 @@
     {% if challenge %}
         <div class="row justify-content-center">
             {{ macros.challenge_keys_col('key3-vert.png', 'Key 3', 'Raskovnik') }}
-            <div class="col-lg-7 col-md-8 col-sm-8 mb-3">
+            <div class="col-lg-8 col-md-8 col-sm-8 mb-3">
                 <div class="card shadow-sm">
                     <div class="card-body fade-in">
                         <p class="card-text mb-4">
@@ -18,11 +18,11 @@
 
                         <form method="POST">
                             {% for option in challenge.options %}
-                                <div class="form-check custom-radio border rounded p-3 mb-3">
+                                <div class="form-check custom-radio border rounded">
                                     <label class="form-check-label mb-2 w-100">
-                                        <input class="form-check-input me-2 mt-2" type="radio" name="option" id="option{{ option.number }}" value="{{ option.number }}" required>
+                                        <input class="form-check-input" type="radio" name="option" id="option{{ option.number }}" value="{{ option.number }}" required>
                                         <span class="option-text">{{ option.text | replace('\n', '<br>') | safe }}</span><br>
-                                        <small class="text-muted">[{{ option.stat | capitalize }} challenge — {{ option.chance }}% chance of success]</small>
+                                        <span class="muted-stat-text">[{{ option.stat | capitalize }} challenge — {{ option.chance }}% chance of success]</span>
                                     </label>                                    
                                 </div>
                             {% endfor %}
